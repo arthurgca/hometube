@@ -94,6 +94,7 @@ TRANSLATIONS = {
     "quality_strategy_best_no_fallback": "🏆 Best Quality (No fallback)",
     "quality_strategy_choose_profile": "🎯 Choose Quality Profile",
     "quality_strategy_choose_available": "📋 Choose Quality Available",
+    "quality_strategy_direct_bypass": "🚀 Direct Download (Bypass Quality Check)",
     "quality_strategy_help": "Select your quality strategy. Auto tries multiple profiles for best compatibility.",
     # Quality strategy descriptions
     "quality_auto_best_desc": "🔄 **Auto Best Qualities**: Tries up to 2 optimal profiles (AV1 → VP9) until success.",
@@ -101,6 +102,7 @@ TRANSLATIONS = {
     "quality_choose_profile_desc": "🎯 **Choose Specific Profile**: Select one profile from the optimal list. Only that profile will be tried.",
     "quality_choose_available_desc": "📋 **Choose from all Available**: Select any format from the complete list detected by yt-dlp.",
     "quality_choose_available_warning": "⚠️ **Advanced users only**: This bypasses the intelligent profile system.",
+    "quality_direct_bypass_desc": "🚀 **Direct Download**: Skips quality detection and downloads directly. Use for direct video URLs that fail format detection.",
     # Quality profile messages
     "quality_profiles_generated": "✅ {count} optimal profiles generated for this video",
     "quality_profiles_list_title": "📋 Generated Profiles (will be tried in order)",

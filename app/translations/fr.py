@@ -94,6 +94,7 @@ TRANSLATIONS = {
     "quality_strategy_best_no_fallback": "🏆 Meilleure Qualité (Sans repli)",
     "quality_strategy_choose_profile": "🎯 Choisir le Profil de Qualité",
     "quality_strategy_choose_available": "📋 Choisir la Qualité Disponible",
+    "quality_strategy_direct_bypass": "🚀 Téléchargement Direct (Ignorer Détection Qualité)",
     "quality_strategy_help": "Sélectionnez votre stratégie de qualité. Auto essaie plusieurs profils pour une meilleure compatibilité.",
     # Quality strategy descriptions
     "quality_auto_best_desc": "🔄 **Meilleures Qualités Auto**: Essaie jusqu'à 2 profils optimaux (AV1 → VP9) jusqu'au succès.",
@@ -101,6 +102,7 @@ TRANSLATIONS = {
     "quality_choose_profile_desc": "🎯 **Choisir un Profil Spécifique**: Sélectionnez un profil dans la liste optimale. Seul ce profil sera essayé.",
     "quality_choose_available_desc": "📋 **Choisir parmi tous les Disponibles**: Sélectionnez n'importe quel format dans la liste complète détectée par yt-dlp.",
     "quality_choose_available_warning": "⚠️ **Utilisateurs avancés uniquement**: Cela contourne le système de profils intelligents.",
+    "quality_direct_bypass_desc": "🚀 **Téléchargement Direct**: Ignore la détection de qualité et télécharge directement. Utilisez pour les URLs vidéo directes qui échouent à la détection de formats.",
     # Quality profile messages
     "quality_profiles_generated": "✅ {count} profils optimaux générés pour cette vidéo",
     "quality_profiles_list_title": "📋 Profils Générés (seront essayés dans l'ordre)",

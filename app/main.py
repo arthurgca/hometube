@@ -524,6 +524,24 @@ def _display_strategy_content(quality_strategy: str) -> None:
         else:
             st.warning(t("quality_no_formats_selection"))
 
+    elif quality_strategy == "direct_bypass":
+        st.info(t("quality_direct_bypass_desc"))
+        st.warning("⚠️ This mode bypasses all format detection. Use only for direct video URLs that fail quality detection.")
+
+        # Create a simple bypass profile that yt-dlp will resolve at download time
+        bypass_profile = {
+            "format_id": "bv*+ba/b",  # Best video + best audio, or best overall
+            "height": 0,
+            "vcodec": "unknown",
+            "ext": "mkv",
+            "label": "🚀 Direct Download (bypass)",
+            "name": "direct_bypass",
+            "container": "mkv",
+            "priority": 1,
+        }
+        st.session_state.chosen_format_profiles = [bypass_profile]
+        st.success("✅ Direct download mode enabled - will download best available quality")
+
 
 def smart_download_with_profiles(
     base_output: str,
@@ -607,6 +625,9 @@ def smart_download_with_profiles(
     elif quality_strategy in ["choose_profile", "choose_available"]:
         download_mode = "forced"
         refuse_quality_downgrade = False  # User made specific choice
+    elif quality_strategy == "direct_bypass":
+        download_mode = "forced"
+        refuse_quality_downgrade = False  # Bypass mode - let yt-dlp decide
 
     safe_push_log("")
 
@@ -3053,12 +3074,13 @@ with st.expander(f"{t('quality_title')}", expanded=False):
     # Quality strategy selection
     quality_strategy = st.radio(
         t("quality_strategy_prompt"),
-        options=["auto_best", "best_no_fallback", "choose_profile", "choose_available"],
+        options=["auto_best", "best_no_fallback", "choose_profile", "choose_available", "direct_bypass"],
         format_func=lambda x: {
             "auto_best": t("quality_strategy_auto_best"),
             "best_no_fallback": t("quality_strategy_best_no_fallback"),
             "choose_profile": t("quality_strategy_choose_profile"),
             "choose_available": t("quality_strategy_choose_available"),
+            "direct_bypass": t("quality_strategy_direct_bypass"),
         }[x],
         index=default_strategy_index,
         help=t("quality_strategy_help"),
